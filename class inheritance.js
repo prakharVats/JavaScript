@@ -5,10 +5,7 @@ const Car = function(car , speed){
 }
 
 
-Car.prototype.chargeBattery = function(changeTo){
-    this.charge = changeTo;
-    console.log(`charged to : ${this.charge}%`);
-}
+
 Car.prototype.accelerate = function(){
 this.speed += 20;
 this.charge -= 1;
@@ -30,7 +27,11 @@ const EV = function(car , speed , charge){
 // linking EV with Car
 EV.prototype = Object.create(Car.prototype);
 
-
+// defining the prototypes
+EV.prototype.chargeBattery = function(changeTo){
+    this.charge = changeTo;
+    console.log(`charged to : ${this.charge}%`);
+}
 
 const BMW = new EV("BMW" , 150 , "24");
 BMW.accelerate();
