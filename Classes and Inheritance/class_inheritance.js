@@ -4,8 +4,6 @@ const Car = function(car , speed){
     this.speed = speed;
 }
 
-
-
 Car.prototype.accelerate = function(){
 this.speed += 10;
 
